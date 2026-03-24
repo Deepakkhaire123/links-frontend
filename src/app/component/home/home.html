@@ -1,0 +1,1417 @@
+<header>
+  <div class="container">
+    <div class="navbar">
+      <div class="logo"><img src="/assets/indiancasinpo/delhibook.png" alt="" style="width: 140px;"></div>
+      <div class="mobile-menu-icon" id="menuToggle" (click)="toggleMenu()">
+        <i class="fas fa-bars"></i>
+      </div>
+      <div class="nav-links" id="navLinks">
+        <a href="#">Home</a>
+        <a href="#about" (click)="scrollTo('about', $event)">About</a>
+        <a href="#betid" (click)="scrollTo('betid', $event)">Betting ID</a>
+        <a href="#platforms" (click)="scrollTo('platforms', $event)">Platforms</a>
+        <a href="#app" (click)="scrollTo('app', $event)">App</a>
+        <a href="#contact" (click)="scrollTo('contact', $event)">Support</a>
+        <!-- <a href="#" class="btn-outline" style="padding: 8px 20px;"><i class="fas fa-user-circle"></i> Login</a> -->
+        <a href="#get-id-section" (click)="scrollTo('get-id-section', $event)" class="btn-primary get-btn" style="padding: 8px 24px;">Get ID</a>
+      </div>
+    </div>
+  </div>
+</header>
+
+
+
+<main>
+  <div class="container">
+    <!-- Hero Section -->
+    <div class="hero">
+      <div class="hero-grid">
+        <div class="hero-content">
+          <h1>DELHI BOOK: Your Trusted Destination for Online Betting IDs in India</h1>
+          <p style="font-size: 1.1rem; margin: 20px 0;">Cricket · Football · Casino · Instant withdrawals — verified
+            and secure betting experience with your DELHI BOOK ID.</p>
+          <div style="display: flex; gap: 18px; flex-wrap: wrap;">
+            <button class="btn-primary" id="heroGetIdBtn" (click)="getLinksurl()"><i class="fab fa-telegram"></i> Create DELHI BOOK ID</button>
+            <button class="btn-outline" (click)="getDownloadurl()"><i class="fas fa-download"></i> Download App</button>
+          </div>
+          <div class="hero-stats">
+            <div class="stat-card">
+              <div class="stat-number">10 Lakh+</div>
+              <div>Active Users</div>
+            </div>
+            <div class="stat-card">
+              <div class="stat-number">₹12 Cr+</div>
+              <div>Monthly Prizes</div>
+            </div>
+            <div class="stat-card">
+              <div class="stat-number">1-2 Hrs</div>
+              <div>Fast Withdrawals</div>
+            </div>
+            <div class="stat-card">
+              <div class="stat-number">4.8★</div>
+              <div>User Rating</div>
+            </div>
+          </div>
+        </div>
+        <div class="img-banner">
+          <img src="/assets/indiancasinpo/DELHI BOOK-market-banner.webp" alt="">
+          <!-- <i class="fas fa-chart-line" style="font-size: 8rem; color: #ffb34780;"></i> -->
+          <!-- <p style="margin-top: 10px;">#1 Betting Platform</p> -->
+        </div>
+        <div class="container-body">
+          <div class="main_container" id="sticky">
+            <div class="right_col" role="main">
+              <div class="fullrow tile_count">
+                <div class="col-md-12">
+                  <div id="UpCommingData">
+                    <div class="sport-highlight-content tabs" id="accountView" role="main">
+                      <ul class="nav nav-tabs match-buttons" style="display:flex;">
+                        <li class="tabcricket hidden-tabs col-lg-3 col-sm-3" data-tabname="cricket"
+                          [ngClass]="activeTab==0?'active':''" (click)="onChange(0)">
+                          <a data-toggle="tab" class="tabid4">
+                            <p style="margin:0;padding:0"><img style="width:30px;height:25px"
+                                src="/assets/images/cricball.gif">
+                            </p>
+                            <span class="game_label">Cricket</span>
+                          </a>
+                        </li>
+                        <li data-tabname="casino" class="hidden-tabs col-lg-3 col-sm-3" (click)="onChange(1)"
+                          [ngClass]="activeTab==1?'active':''">
+                          <a data-toggle="tab" class="tabid1">
+                            <p style="margin:0;padding:0"><img style="width:30px;height:25px"
+                                src="/assets/images/soccerfinal.gif"></p>
+                            <span class="game_label">
+                              Soccer</span>
+                          </a>
+                        </li>
+                        <li data-tabname="casino" class="hidden-tabs col-lg-3 col-sm-3" (click)="onChange(2)"
+                          [ngClass]="activeTab==2?'active':''">
+                          <a data-toggle="tab" class="tabid1">
+                            <p style="margin:0;padding:0"><img style="width:30px;height:25px"
+                                src="/assets/images/tennisfinal.gif"></p>
+                            <span class="game_label">
+                              Tennis</span>
+                          </a>
+                        </li>
+
+                      </ul>
+
+                      <div class="modal-body tab-content matches-all">
+                        <span id="msg_error"></span><span id="errmsg"></span>
+                        <div class="table table-striped jambo_table bulk_action">
+                          @if (activeTab==0) {
+                          <div class="clearfix"></div>
+                          <div id="cricket" class=" tab-pane fade  show in active"
+                            style="border:1px solid #000;border-radius:5px">
+                            <table class="table" style="font-size:11px;background:#fff">
+                              <thead>
+                                <tr
+                                  style="text-align:center;border-top:1px solid #e6e6e6;background:#193052;display:flex;justify-content:space-evenly;">
+                                  <td style="border:none !important;width:70%"></td>
+                                  <td style="border:none !important;padding:5px;width:10%;font-weight:bold;color:#fff">
+                                    1</td>
+                                  <td style="border:none !important;padding:5px;width:10%;font-weight:bold;color:#fff">
+                                    X</td>
+                                </tr>
+                              </thead>
+                              <tbody id="cricketT">
+                                <tr>
+                                  <td colspan="3" style="background:#193052;">
+                                    <h5 style="color:#fff;margin:0">International Twenty20
+                                      Matches
+                                    </h5>
+                                  </td>
+                                </tr>
+                                <tr
+                                  style="border-bottom:1px solid #d4d4d4;display:flex;align-items:center;justify-content:space-between;">
+                                  <td
+                                    style="padding-left:0;white-space: nowrap;overflow: hidden;text-overflow: ellipsis;border:none">
+                                    &nbsp;&nbsp;&nbsp;<span
+                                      style="background: #60BA1E;font-size:10px;color:#fff;padding:2px 7px;border-radius:4px 0px 0px 4px;">In-Play</span><span
+                                      style="background: #0a92a5;font-size:10px;color:#fff;padding:2px 7px;border-radius:0px 4px 4px 0px;">Fancy</span>&nbsp;<span
+                                      style="color:#777;font-size:11px;">22 Mar
+                                      11:45:00</span><br>
+                                    <a class="col-sm-12"
+                                      style="white-space:nowrap;overflow: hidden;text-overflow: ellipsis;width:200px;"
+                                      href="/inplay/4/35394595"> <span style="color:#2789CE;cursor: pointer;"><span
+                                          style="font-size:14px;line-height:24px;font-weight:bold"><i
+                                            class="fa fa-circle" style="color:#508d0e"></i>&nbsp;New Zealand
+                                          v
+                                          South Africa</span></span></a>
+                                  </td>
+
+
+                                  <td class="hidden-xs"
+                                    style="border:none;padding:1px;line-height:50px;text-align:center">
+
+
+                                    <button class="btn btn-success" id="rate3back35394595"
+                                      style="color:#000;width:50px;background:#72bbef;border:#193052;padding:6px;font-size:10px;">2.28</button>
+                                    <button class="btn btn-success" id="rate3lay35394595"
+                                      style="color:#000;width:50px;background:#faa9ba;border:#193052;padding:6px;font-size:10px;">2.3</button>
+                                    <button class="btn btn-success" id="rate3back35394595"
+                                      style="color:#000;width:50px;background:#72bbef;border:#193052;padding:6px;font-size:10px;">--</button>
+                                    <button class="btn btn-success" id="rate3lay35394595"
+                                      style="color:#000;width:50px;background:#faa9ba;border:#193052;padding:6px;font-size:10px;">--</button>
+                                    <button class="btn btn-success" id="rate3back35394595"
+                                      style="color:#000;width:50px;background:#72bbef;border:#193052;padding:6px;font-size:10px;">1.77</button>
+                                    <button class="btn btn-success" id="rate3lay35394595"
+                                      style="color:#000;width:50px;background:#faa9ba;border:#193052;padding:6px;font-size:10px;">1.79</button>
+
+                                  </td>
+
+                                  <td class="hidden-lg hidden-sm hidden-md"
+                                    style="border:none;padding:1px;line-height:25px;text-align:center">
+                                    <button class="btn btn-success" id="mrate1back35394595"
+                                      style="border:1px solid #2789ce;margin-bottom:2px;color:#000;width:50px;background:#72bbef;padding:6px;font-size:14px;">2.28</button>
+                                    <button class="btn btn-success" id="mrate3lay35394595"
+                                      style="border:1px solid #2789ce;margin-bottom:2px;color:#000;width:50px;background:#faa9ba;padding:6px;font-size:14px;">2.3</button>
+
+
+                                  </td>
+
+
+                                </tr>
+
+
+
+                                <tr>
+                                  <td colspan="3" style="background:#193052;">
+                                    <h5 style="color:#fff;margin:0">Indian Premier League</h5>
+                                  </td>
+                                </tr>
+                                <tr
+                                  style="border-bottom:1px solid #d4d4d4;display:flex;align-items:center;justify-content:space-between;">
+                                  <td
+                                    style="padding-left:0;white-space: nowrap;overflow: hidden;text-overflow: ellipsis;border:none">
+                                    &nbsp;&nbsp;&nbsp;<span
+                                      style="background: #60BA1E;font-size:10px;color:#fff;padding:2px 7px;border-radius:4px 0px 0px 4px;">Going
+                                      In-Play</span><span
+                                      style="background: #0a92a5;font-size:10px;color:#fff;padding:2px 7px;border-radius:0px 4px 4px 0px;">Fancy</span>
+                                    &nbsp;<span style="color:#777;font-size:11px;">29 Mar
+                                      18:30:00</span><br>
+                                    <a class="col-sm-12"
+                                      style="white-space:nowrap;overflow: hidden;text-overflow: ellipsis;width:200px;"
+                                      href="/inplay/4/35364422"> <span style="color:#2789CE;cursor: pointer;"><span
+                                          style="font-size:14px;line-height:24px;font-weight:bold"><i
+                                            class="fa fa-circle-o"></i>&nbsp;Mumbai
+                                          Indians
+                                          v Kolkata Knight Riders</span> </span></a>
+                                  </td>
+
+
+                                  <td class="hidden-xs"
+                                    style="border:none;padding:1px;line-height:50px;text-align:center">
+
+                                    <button class="btn btn-success" id="rate3back35364422"
+                                      style="color:#000;width:50px;background:#72bbef;border:#193052;padding:6px;font-size:10px;">1.55</button>
+                                    <button class="btn btn-success" id="rate3lay35364422"
+                                      style="color:#000;width:50px;background:#faa9ba;border:#193052;padding:6px;font-size:10px;">1.64</button>
+                                    <button class="btn btn-success" id="rate3back35364422"
+                                      style="color:#000;width:50px;background:#72bbef;border:#193052;padding:6px;font-size:10px;">--</button>
+                                    <button class="btn btn-success" id="rate3lay35364422"
+                                      style="color:#000;width:50px;background:#faa9ba;border:#193052;padding:6px;font-size:10px;">--</button>
+                                    <button class="btn btn-success" id="rate3back35364422"
+                                      style="color:#000;width:50px;background:#72bbef;border:#193052;padding:6px;font-size:10px;">2.56</button>
+                                    <button class="btn btn-success" id="rate3lay35364422"
+                                      style="color:#000;width:50px;background:#faa9ba;border:#193052;padding:6px;font-size:10px;">2.8</button>
+
+                                  </td>
+
+                                  <td class="hidden-lg hidden-sm hidden-md"
+                                    style="border:none;padding:1px;line-height:25px;text-align:center">
+                                    <button class="btn btn-success" id="mrate1back35364422"
+                                      style="border:1px solid #2789ce;margin-bottom:2px;color:#000;width:50px;background:#72bbef;padding:6px;font-size:14px;">1.55</button>
+                                    <button class="btn btn-success" id="mrate3lay35364422"
+                                      style="border:1px solid #2789ce;margin-bottom:2px;color:#000;width:50px;background:#faa9ba;padding:6px;font-size:14px;">1.64</button>
+
+
+                                  </td>
+
+
+
+                                </tr>
+                                <tr>
+                                  <td colspan="3" style="background:#193052;">
+                                    <h5 style="color:#fff;margin:0">Indian Premier League</h5>
+                                  </td>
+                                </tr>
+                                <tr
+                                  style="border-bottom:1px solid #d4d4d4;display:flex;align-items:center;justify-content:space-between;">
+                                  <td
+                                    style="padding-left:0;white-space: nowrap;overflow: hidden;text-overflow: ellipsis;border:none">
+                                    &nbsp;&nbsp;&nbsp;<span
+                                      style="background: #60BA1E;font-size:10px;color:#fff;padding:2px 7px;border-radius:4px 0px 0px 4px;">Going
+                                      In-Play</span><span
+                                      style="background: #0a92a5;font-size:10px;color:#fff;padding:2px 7px;border-radius:0px 4px 4px 0px;">Fancy</span>
+                                    &nbsp;<span style="color:#777;font-size:11px;">28 Mar
+                                      19:30:00</span><br>
+                                    <a class="col-sm-12"
+                                      style="white-space:nowrap;overflow: hidden;text-overflow: ellipsis;width:200px;"
+                                      href="/inplay/4/35364409"> <span style="color:#2789CE;cursor: pointer;"><span
+                                          style="font-size:14px;line-height:24px;font-weight:bold"><i
+                                            class="fa fa-circle-o"></i>&nbsp;RC
+                                          Bengaluru v
+                                          Sunrisers Hyderabad</span> </span></a>
+                                  </td>
+
+
+                                  <td class="hidden-xs"
+                                    style="border:none;padding:1px;line-height:50px;text-align:center">
+
+                                    <button class="btn btn-success" id="rate3back35364409"
+                                      style="color:#000;width:50px;background:#72bbef;border:#193052;padding:6px;font-size:10px;">1.81</button>
+                                    <button class="btn btn-success" id="rate3lay35364409"
+                                      style="color:#000;width:50px;background:#faa9ba;border:#193052;padding:6px;font-size:10px;">1.88</button>
+                                    <button class="btn btn-success" id="rate3back35364409"
+                                      style="color:#000;width:50px;background:#72bbef;border:#193052;padding:6px;font-size:10px;">--</button>
+                                    <button class="btn btn-success" id="rate3lay35364409"
+                                      style="color:#000;width:50px;background:#faa9ba;border:#193052;padding:6px;font-size:10px;">--</button>
+                                    <button class="btn btn-success" id="rate3back35364409"
+                                      style="color:#000;width:50px;background:#72bbef;border:#193052;padding:6px;font-size:10px;">2.14</button>
+                                    <button class="btn btn-success" id="rate3lay35364409"
+                                      style="color:#000;width:50px;background:#faa9ba;border:#193052;padding:6px;font-size:10px;">2.24</button>
+
+                                  </td>
+
+                                  <td class="hidden-lg hidden-sm hidden-md"
+                                    style="border:none;padding:1px;line-height:25px;text-align:center">
+                                    <button class="btn btn-success" id="mrate1back35364409"
+                                      style="border:1px solid #2789ce;margin-bottom:2px;color:#000;width:50px;background:#72bbef;padding:6px;font-size:14px;">1.81</button>
+                                    <button class="btn btn-success" id="mrate3lay35364409"
+                                      style="border:1px solid #2789ce;margin-bottom:2px;color:#000;width:50px;background:#faa9ba;padding:6px;font-size:14px;">1.88</button>
+
+
+                                  </td>
+
+
+
+                                </tr>
+                                <tr>
+                                  <td colspan="3" style="background:#193052;">
+                                    <h5 style="color:#fff;margin:0">CSA Provincial One-Day
+                                      Challenge
+                                      Div 1</h5>
+                                  </td>
+                                </tr>
+                                <tr
+                                  style="border-bottom:1px solid #d4d4d4;display:flex;align-items:center;justify-content:space-between;">
+                                  <td
+                                    style="padding-left:0;white-space: nowrap;overflow: hidden;text-overflow: ellipsis;border:none">
+                                    &nbsp;&nbsp;&nbsp;<span
+                                      style="background: #60BA1E;font-size:10px;color:#fff;padding:2px 7px;border-radius:4px 0px 0px 4px;">Going
+                                      In-Play</span><span
+                                      style="background: #0a92a5;font-size:10px;color:#fff;padding:2px 7px;border-radius:0px 4px 4px 0px;">Fancy</span>
+                                    &nbsp;<span style="color:#777;font-size:11px;">22 Mar
+                                      13:30:00</span><br>
+                                    <a class="col-sm-12"
+                                      style="white-space:nowrap;overflow: hidden;text-overflow: ellipsis;width:200px;"
+                                      href="/inplay/4/35391419"> <span style="color:#2789CE;cursor: pointer;"><span
+                                          style="font-size:14px;line-height:24px;font-weight:bold"><i
+                                            class="fa fa-circle-o"></i>&nbsp;Titans v
+                                          North
+                                          West Dragons</span> </span></a>
+                                  </td>
+
+
+                                  <td class="hidden-xs"
+                                    style="border:none;padding:1px;line-height:50px;text-align:center">
+
+                                    <button class="btn btn-success" id="rate3back35391419"
+                                      style="color:#000;width:50px;background:#72bbef;border:#193052;padding:6px;font-size:10px;">2.04</button>
+                                    <button class="btn btn-success" id="rate3lay35391419"
+                                      style="color:#000;width:50px;background:#faa9ba;border:#193052;padding:6px;font-size:10px;">2.1</button>
+                                    <button class="btn btn-success" id="rate3back35391419"
+                                      style="color:#000;width:50px;background:#72bbef;border:#193052;padding:6px;font-size:10px;">--</button>
+                                    <button class="btn btn-success" id="rate3lay35391419"
+                                      style="color:#000;width:50px;background:#faa9ba;border:#193052;padding:6px;font-size:10px;">--</button>
+                                    <button class="btn btn-success" id="rate3back35391419"
+                                      style="color:#000;width:50px;background:#72bbef;border:#193052;padding:6px;font-size:10px;">1.91</button>
+                                    <button class="btn btn-success" id="rate3lay35391419"
+                                      style="color:#000;width:50px;background:#faa9ba;border:#193052;padding:6px;font-size:10px;">1.96</button>
+
+                                  </td>
+
+                                  <td class="hidden-lg hidden-sm hidden-md"
+                                    style="border:none;padding:1px;line-height:25px;text-align:center">
+                                    <button class="btn btn-success" id="mrate1back35391419"
+                                      style="border:1px solid #2789ce;margin-bottom:2px;color:#000;width:50px;background:#72bbef;padding:6px;font-size:14px;">2.04</button>
+                                    <button class="btn btn-success" id="mrate3lay35391419"
+                                      style="border:1px solid #2789ce;margin-bottom:2px;color:#000;width:50px;background:#faa9ba;padding:6px;font-size:14px;">2.1</button>
+
+
+                                  </td>
+
+
+
+                                </tr>
+                                <tr>
+                                  <td colspan="3" style="background:#193052;">
+                                    <h5 style="color:#fff;margin:0">CSA One-Day Challenge Div 2
+                                    </h5>
+                                  </td>
+                                </tr>
+                                <tr
+                                  style="border-bottom:1px solid #d4d4d4;display:flex;align-items:center;justify-content:space-between;">
+                                  <td
+                                    style="padding-left:0;white-space: nowrap;overflow: hidden;text-overflow: ellipsis;border:none">
+                                    &nbsp;&nbsp;&nbsp;<span
+                                      style="background: #60BA1E;font-size:10px;color:#fff;padding:2px 7px;border-radius:4px 0px 0px 4px;">Going
+                                      In-Play</span><span
+                                      style="background: #0a92a5;font-size:10px;color:#fff;padding:2px 7px;border-radius:0px 4px 4px 0px;">Fancy</span>
+                                    &nbsp;<span style="color:#777;font-size:11px;">22 Mar
+                                      13:30:00</span><br>
+                                    <a class="col-sm-12"
+                                      style="white-space:nowrap;overflow: hidden;text-overflow: ellipsis;width:200px;"
+                                      href="/inplay/4/35388493"> <span style="color:#2789CE;cursor: pointer;"><span
+                                          style="font-size:14px;line-height:24px;font-weight:bold"><i
+                                            class="fa fa-circle-o"></i>&nbsp;Knights v
+                                          Eastern Cape Linyathi</span> </span></a>
+                                  </td>
+
+
+                                  <td class="hidden-xs"
+                                    style="border:none;padding:1px;line-height:50px;text-align:center">
+
+                                    <button class="btn btn-success" id="rate3back35388493"
+                                      style="color:#000;width:50px;background:#72bbef;border:#193052;padding:6px;font-size:10px;">1.61</button>
+                                    <button class="btn btn-success" id="rate3lay35388493"
+                                      style="color:#000;width:50px;background:#faa9ba;border:#193052;padding:6px;font-size:10px;">1.67</button>
+                                    <button class="btn btn-success" id="rate3back35388493"
+                                      style="color:#000;width:50px;background:#72bbef;border:#193052;padding:6px;font-size:10px;">--</button>
+                                    <button class="btn btn-success" id="rate3lay35388493"
+                                      style="color:#000;width:50px;background:#faa9ba;border:#193052;padding:6px;font-size:10px;">--</button>
+                                    <button class="btn btn-success" id="rate3back35388493"
+                                      style="color:#000;width:50px;background:#72bbef;border:#193052;padding:6px;font-size:10px;">2.48</button>
+                                    <button class="btn btn-success" id="rate3lay35388493"
+                                      style="color:#000;width:50px;background:#faa9ba;border:#193052;padding:6px;font-size:10px;">2.64</button>
+
+                                  </td>
+
+                                  <td class="hidden-lg hidden-sm hidden-md"
+                                    style="border:none;padding:1px;line-height:25px;text-align:center">
+                                    <button class="btn btn-success" id="mrate1back35388493"
+                                      style="border:1px solid #2789ce;margin-bottom:2px;color:#000;width:50px;background:#72bbef;padding:6px;font-size:14px;">1.61</button>
+                                    <button class="btn btn-success" id="mrate3lay35388493"
+                                      style="border:1px solid #2789ce;margin-bottom:2px;color:#000;width:50px;background:#faa9ba;padding:6px;font-size:14px;">1.67</button>
+
+
+                                  </td>
+
+
+
+                                </tr>
+                                <tr>
+                                  <td colspan="3" style="background:#193052;">
+                                    <h5 style="color:#fff;margin:0">CSA Provincial One-Day
+                                      Challenge
+                                      Div 1</h5>
+                                  </td>
+                                </tr>
+                                <tr
+                                  style="border-bottom:1px solid #d4d4d4;display:flex;align-items:center;justify-content:space-between;">
+                                  <td
+                                    style="padding-left:0;white-space: nowrap;overflow: hidden;text-overflow: ellipsis;border:none">
+                                    &nbsp;&nbsp;&nbsp;<span
+                                      style="background: #60BA1E;font-size:10px;color:#fff;padding:2px 7px;border-radius:4px 0px 0px 4px;">Going
+                                      In-Play</span><span
+                                      style="background: #0a92a5;font-size:10px;color:#fff;padding:2px 7px;border-radius:0px 4px 4px 0px;">Fancy</span>
+                                    &nbsp;<span style="color:#777;font-size:11px;">22 Mar
+                                      13:30:00</span><br>
+                                    <a class="col-sm-12"
+                                      style="white-space:nowrap;overflow: hidden;text-overflow: ellipsis;width:200px;"
+                                      href="/inplay/4/35391573"> <span style="color:#2789CE;cursor: pointer;"><span
+                                          style="font-size:14px;line-height:24px;font-weight:bold"><i
+                                            class="fa fa-circle-o"></i>&nbsp;Dolphins v
+                                          Western Province</span> </span></a>
+                                  </td>
+
+
+                                  <td class="hidden-xs"
+                                    style="border:none;padding:1px;line-height:50px;text-align:center">
+
+                                    <button class="btn btn-success" id="rate3back35391573"
+                                      style="color:#000;width:50px;background:#72bbef;border:#193052;padding:6px;font-size:10px;">1.94</button>
+                                    <button class="btn btn-success" id="rate3lay35391573"
+                                      style="color:#000;width:50px;background:#faa9ba;border:#193052;padding:6px;font-size:10px;">2.02</button>
+                                    <button class="btn btn-success" id="rate3back35391573"
+                                      style="color:#000;width:50px;background:#72bbef;border:#193052;padding:6px;font-size:10px;">--</button>
+                                    <button class="btn btn-success" id="rate3lay35391573"
+                                      style="color:#000;width:50px;background:#faa9ba;border:#193052;padding:6px;font-size:10px;">--</button>
+                                    <button class="btn btn-success" id="rate3back35391573"
+                                      style="color:#000;width:50px;background:#72bbef;border:#193052;padding:6px;font-size:10px;">1.99</button>
+                                    <button class="btn btn-success" id="rate3lay35391573"
+                                      style="color:#000;width:50px;background:#faa9ba;border:#193052;padding:6px;font-size:10px;">2.06</button>
+
+                                  </td>
+
+                                  <td class="hidden-lg hidden-sm hidden-md"
+                                    style="border:none;padding:1px;line-height:25px;text-align:center">
+                                    <button class="btn btn-success" id="mrate1back35391573"
+                                      style="border:1px solid #2789ce;margin-bottom:2px;color:#000;width:50px;background:#72bbef;padding:6px;font-size:14px;">1.94</button>
+                                    <button class="btn btn-success" id="mrate3lay35391573"
+                                      style="border:1px solid #2789ce;margin-bottom:2px;color:#000;width:50px;background:#faa9ba;padding:6px;font-size:14px;">2.02</button>
+
+
+                                  </td>
+
+
+
+                                </tr>
+
+                              </tbody>
+                            </table>
+
+                          </div>
+                          }
+
+                          <!-- Soccer -->
+                          @if (activeTab==1) {
+                          <div class="clearfix"></div>
+                          <div id="soccer" class="tab-pane fade active in" bis_skin_checked="1">
+                            <table class="table" style="font-size:11px;background:#fff">
+                              <thead>
+                                <tr
+                                  style="text-align:center;border-top:1px solid #e6e6e6;background:#193052;display:flex;justify-content:space-evenly;">
+                                  <td style="border:none !important;width:70%"></td>
+                                  <td style="border:none !important;padding:5px;width:10%;font-weight:bold;color:#fff">1
+                                  </td>
+                                  <td style="border:none !important;padding:5px;width:10%;font-weight:bold;color:#fff">X
+                                  </td>
+                                </tr>
+                              </thead>
+                              <tbody id="soccerT">
+
+
+
+                                <tr>
+                                  <td colspan="3" style="background:#193052;">
+                                    <h5 style="color:#fff;margin:0">SPAIN LaLiga2</h5>
+                                  </td>
+                                </tr>
+                                <tr
+                                  style="border-bottom:1px solid #d4d4d4;display:flex;align-items:center;justify-content:space-between;">
+                                  <td
+                                    style="padding-left:0;white-space: nowrap;overflow: hidden;text-overflow: ellipsis;border:none">
+                                    &nbsp;&nbsp;&nbsp;<span
+                                      style="background: #60BA1E;font-size:10px;color:#fff;padding:2px 7px;border-radius:4px 0px 0px 4px;">Going</span><span
+                                      style="background: #0a92a5;font-size:10px;color:#fff;padding:2px 7px;border-radius:0px 4px 4px 0px;">In-Play</span><span
+                                      style="color:#777;font-size:11px;">24 Mar 01:00:00</span><br>
+                                    <a class="col-xs-12"
+                                      style="white-space:nowrap;overflow: hidden;text-overflow: ellipsis; width:200px;"
+                                      href="/inplay/1/35380084"> <span style="color:#2789CE;cursor: pointer;"><span
+                                          style="font-size:14px;line-height:24px;font-weight:bold"><i
+                                            class="fa fa-circle-o"></i>&nbsp;CD Castellon v Leonesa</span> </span></a>
+                                  </td>
+                                  <td style="border:none;text-align:right"><img
+                                      style="margin-right:5%;width:30px;height:25px"
+                                      src="/assets/images/soccerfinal.gif"></td>
+
+
+
+                                </tr>
+                                <tr>
+                                  <td colspan="3" style="background:#193052;">
+                                    <h5 style="color:#fff;margin:0">TUNISIA Tunisia Cup</h5>
+                                  </td>
+                                </tr>
+                                <tr
+                                  style="border-bottom:1px solid #d4d4d4;display:flex;align-items:center;justify-content:space-between;">
+                                  <td
+                                    style="padding-left:0;white-space: nowrap;overflow: hidden;text-overflow: ellipsis;border:none">
+                                    &nbsp;&nbsp;&nbsp;<span
+                                      style="background: #60BA1E;font-size:10px;color:#fff;padding:2px 7px;border-radius:4px 0px 0px 4px;">Going</span><span
+                                      style="background: #0a92a5;font-size:10px;color:#fff;padding:2px 7px;border-radius:0px 4px 4px 0px;">In-Play</span><span
+                                      style="color:#777;font-size:11px;">23 Mar 18:00:00</span><br>
+                                    <a class="col-xs-12"
+                                      style="white-space:nowrap;overflow: hidden;text-overflow: ellipsis; width:200px;"
+                                      href="/inplay/1/35401858"> <span style="color:#2789CE;cursor: pointer;"><span
+                                          style="font-size:14px;line-height:24px;font-weight:bold"><i
+                                            class="fa fa-circle-o"></i>&nbsp;AS Agareb v Stade Gabesien</span>
+                                      </span></a>
+                                  </td>
+                                  <td style="border:none;text-align:right"><img
+                                      style="margin-right:5%;width:30px;height:25px"
+                                      src="/assets/images/soccerfinal.gif"></td>
+
+
+
+                                </tr>
+
+                              </tbody>
+                            </table>
+                          </div>
+                          }
+                          <!-- Tennis -->
+                          @if (activeTab==2) {
+                          <div class="clearfix"></div>
+                          <div class="tab-pane fade active in" id="tennis" bis_skin_checked="1">
+                            <table class="table" style="font-size:11px;background:#fff">
+
+
+
+                              <thead>
+
+                                <tr
+                                  style="text-align:center;border-top:1px solid #e6e6e6;background:#193052;display:flex;justify-content:space-evenly;">
+                                  <td style="border:none !important;width:70%"></td>
+                                  <td style="border:none !important;padding:5px;width:10%;font-weight:bold;color:#fff">1
+                                  </td>
+                                  <td style="border:none !important;padding:5px;width:10%;font-weight:bold;color:#fff">X
+                                  </td>
+                                </tr>
+                              </thead>
+                              <tbody id="tennisT">
+
+
+
+                                <tr>
+                                  <td colspan="3" style="background:#193052;">
+                                    <h5 style="color:#fff;margin:0">WTA - SINGLES MIAMI (USA)</h5>
+                                  </td>
+                                </tr>
+                                <tr
+                                  style="border-bottom:1px solid #d4d4d4;display:flex;align-items:center;justify-content:space-between;">
+                                  <td
+                                    style="padding-left:0;white-space: nowrap;overflow: hidden;text-overflow: ellipsis;border:none">
+                                    &nbsp;&nbsp;&nbsp;<span
+                                      style="background: #60BA1E;font-size:10px;color:#fff;padding:2px 7px;border-radius:4px 0px 0px 4px;">Going</span><span
+                                      style="background: #0a92a5;font-size:10px;color:#fff;padding:2px 7px;border-radius:0px 4px 4px 0px;">In-Play</span><span
+                                      style="color:#777;font-size:11px;">24 Mar 06:00:00</span><br>
+                                    <a class="col-xs-12"
+                                      style="white-space:nowrap;overflow: hidden;text-overflow: ellipsis; width:200px;"
+                                      href="/inplay/2/35404898"> <span style="color:#2789CE;cursor: pointer;"><span
+                                          style="font-size:14px;line-height:24px;font-weight:bold"><i
+                                            class="fa fa-circle-o"></i>&nbsp;E Rybakina v Ta Gibson</span> </span></a>
+                                  </td>
+
+                                  <td style="border:none;text-align:right"><img
+                                      style="margin-right:5%;width:30px;height:25px"
+                                      src="/assets/images/tennisfinal.gif"></td>
+
+
+
+                                </tr>
+                                <tr>
+                                  <td colspan="3" style="background:#193052;">
+                                    <h5 style="color:#fff;margin:0">WTA - SINGLES MIAMI (USA)</h5>
+                                  </td>
+                                </tr>
+                                <tr
+                                  style="border-bottom:1px solid #d4d4d4;display:flex;align-items:center;justify-content:space-between;">
+                                  <td
+                                    style="padding-left:0;white-space: nowrap;overflow: hidden;text-overflow: ellipsis;border:none">
+                                    &nbsp;&nbsp;&nbsp;<span
+                                      style="background: #60BA1E;font-size:10px;color:#fff;padding:2px 7px;border-radius:4px 0px 0px 4px;">Going</span><span
+                                      style="background: #0a92a5;font-size:10px;color:#fff;padding:2px 7px;border-radius:0px 4px 4px 0px;">In-Play</span><span
+                                      style="color:#777;font-size:11px;">24 Mar 04:30:00</span><br>
+                                    <a class="col-xs-12"
+                                      style="white-space:nowrap;overflow: hidden;text-overflow: ellipsis; width:200px;"
+                                      href="/inplay/2/35400481"> <span style="color:#2789CE;cursor: pointer;"><span
+                                          style="font-size:14px;line-height:24px;font-weight:bold"><i
+                                            class="fa fa-circle-o"></i>&nbsp;A Anisimova v Bencic</span> </span></a>
+                                  </td>
+
+                                  <td style="border:none;text-align:right"><img
+                                      style="margin-right:5%;width:30px;height:25px"
+                                      src="/assets/images/tennisfinal.gif"></td>
+
+
+
+                                </tr>
+                                <tr>
+                                  <td colspan="3" style="background:#193052;">
+                                    <h5 style="color:#fff;margin:0">WTA - SINGLES MIAMI (USA)</h5>
+                                  </td>
+                                </tr>
+                                <tr
+                                  style="border-bottom:1px solid #d4d4d4;display:flex;align-items:center;justify-content:space-between;">
+                                  <td
+                                    style="padding-left:0;white-space: nowrap;overflow: hidden;text-overflow: ellipsis;border:none">
+                                    &nbsp;&nbsp;&nbsp;<span
+                                      style="background: #60BA1E;font-size:10px;color:#fff;padding:2px 7px;border-radius:4px 0px 0px 4px;">Going</span><span
+                                      style="background: #0a92a5;font-size:10px;color:#fff;padding:2px 7px;border-radius:0px 4px 4px 0px;">In-Play</span><span
+                                      style="color:#777;font-size:11px;">24 Mar 01:00:00</span><br>
+                                    <a class="col-xs-12"
+                                      style="white-space:nowrap;overflow: hidden;text-overflow: ellipsis; width:200px;"
+                                      href="/inplay/2/35404362"> <span style="color:#2789CE;cursor: pointer;"><span
+                                          style="font-size:14px;line-height:24px;font-weight:bold"><i
+                                            class="fa fa-circle-o"></i>&nbsp;J Cristian v J Pegula</span> </span></a>
+                                  </td>
+
+                                  <td style="border:none;text-align:right"><img
+                                      style="margin-right:5%;width:30px;height:25px"
+                                      src="/assets/images/tennisfinal.gif"></td>
+
+
+
+                                </tr>
+                                <tr>
+                                  <td colspan="3" style="background:#193052;">
+                                    <h5 style="color:#fff;margin:0">WTA - SINGLES MIAMI (USA)</h5>
+                                  </td>
+                                </tr>
+                                <tr
+                                  style="border-bottom:1px solid #d4d4d4;display:flex;align-items:center;justify-content:space-between;">
+                                  <td
+                                    style="padding-left:0;white-space: nowrap;overflow: hidden;text-overflow: ellipsis;border:none">
+                                    &nbsp;&nbsp;&nbsp;<span
+                                      style="background: #60BA1E;font-size:10px;color:#fff;padding:2px 7px;border-radius:4px 0px 0px 4px;">Going</span><span
+                                      style="background: #0a92a5;font-size:10px;color:#fff;padding:2px 7px;border-radius:0px 4px 4px 0px;">In-Play</span><span
+                                      style="color:#777;font-size:11px;">24 Mar 00:00:00</span><br>
+                                    <a class="col-xs-12"
+                                      style="white-space:nowrap;overflow: hidden;text-overflow: ellipsis; width:200px;"
+                                      href="/inplay/2/35405172"> <span style="color:#2789CE;cursor: pointer;"><span
+                                          style="font-size:14px;line-height:24px;font-weight:bold"><i
+                                            class="fa fa-circle-o"></i>&nbsp;A Sabalenka v Q Zheng</span> </span></a>
+                                  </td>
+
+                                  <td style="border:none;text-align:right"><img
+                                      style="margin-right:5%;width:30px;height:25px"
+                                      src="/assets/images/tennisfinal.gif"></td>
+
+
+
+                                </tr>
+                                <tr>
+                                  <td colspan="3" style="background:#193052;">
+                                    <h5 style="color:#fff;margin:0">WTA - SINGLES MIAMI (USA)</h5>
+                                  </td>
+                                </tr>
+                                <tr
+                                  style="border-bottom:1px solid #d4d4d4;display:flex;align-items:center;justify-content:space-between;">
+                                  <td
+                                    style="padding-left:0;white-space: nowrap;overflow: hidden;text-overflow: ellipsis;border:none">
+                                    &nbsp;&nbsp;&nbsp;<span
+                                      style="background: #60BA1E;font-size:10px;color:#fff;padding:2px 7px;border-radius:4px 0px 0px 4px;">Going</span><span
+                                      style="background: #0a92a5;font-size:10px;color:#fff;padding:2px 7px;border-radius:0px 4px 4px 0px;">In-Play</span><span
+                                      style="color:#777;font-size:11px;">23 Mar 22:00:00</span><br>
+                                    <a class="col-xs-12"
+                                      style="white-space:nowrap;overflow: hidden;text-overflow: ellipsis; width:200px;"
+                                      href="/inplay/2/35400515"> <span style="color:#2789CE;cursor: pointer;"><span
+                                          style="font-size:14px;line-height:24px;font-weight:bold"><i
+                                            class="fa fa-circle-o"></i>&nbsp;Mir Andreeva v Vi Mboko</span> </span></a>
+                                  </td>
+
+                                  <td style="border:none;text-align:right"><img
+                                      style="margin-right:5%;width:30px;height:25px"
+                                      src="/assets/images/tennisfinal.gif"></td>
+
+
+
+                                </tr>
+
+                              </tbody>
+                            </table>
+                          </div>
+                          }
+
+                        </div>
+                      </div>
+                    </div>
+
+                  </div>
+                </div>
+
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="container-body" style="display:inline-block;background:#fff">
+          <div class="inplay-match mobile-content-games">
+            <div class="col-xs-12 col-lg-12" style="background:#193052;padding-left: 15px;border-top: 1px solid #fff;">
+              <h4
+                style="color:#fff;line-height:2.5;padding:0px;padding: 0px 0px;font-size:20px;margin: 5px; margin-bottom: 0;">
+                Casino</h4>
+            </div>
+            <div style="margin: 0;">
+              <div class="col-md-12 mobile-width" style="margin: 0;padding: 0;">
+                <div class="inplay-sportwise">
+                  <div class="position-relative mobile-games-content">
+                    <ul id="menuListId" class="menu-list">
+                      <li class="menu-item active" id="allBarbtn">
+                        <div><span class="orange-nav-ic-txt"> ALL </span></div>
+                      </li>
+                      <li class="menu-item" id="royalGameBarbtn">
+                        <div><span class="orange-nav-ic-txt"> ROYAL GAMING </span></div>
+                      </li>
+                      <li class="menu-item" id="casinoBarbtn">
+                        <div><span class="orange-nav-ic-txt"> DIAMOND CASINO </span></div>
+                      </li>
+                      <li class="menu-item" id="auraBarbtn">
+                        <div><span class="orange-nav-ic-txt"> AURA GAMING </span></div>
+                      </li>
+                      <li class="menu-item" id="sexyBarbtn">
+                        <div><span class="orange-nav-ic-txt"> SEXY </span></div>
+                      </li>
+                      <li class="menu-item" id="virtualBarbtn">
+                        <div><span class="orange-nav-ic-txt"> OUR VIRTUAL </span></div>
+                      </li>
+                      <li class="menu-item" id="tvbetBarbtn">
+                        <div><span class="orange-nav-ic-txt"> SPRIBE </span></div>
+                      </li>
+                      <li class="menu-item" id="jiliBarbtn">
+                        <div><span class="orange-nav-ic-txt"> JILI </span></div>
+                      </li>
+                      <li class="menu-item" id="kingmakerBarbtn">
+                        <div><span class="orange-nav-ic-txt"> KINGMAKER </span></div>
+                      </li>
+                      <li class="menu-item" id="ezugiBarbtn">
+                        <div><span class="orange-nav-ic-txt"> YELLOWBAT </span></div>
+                      </li>
+
+                      <li class="menu-item" id="betgameBarbtn">
+                        <div><span class="orange-nav-ic-txt"> YL </span></div>
+                      </li>
+                      <li class="menu-item" id="platingamesBarbtn">
+                        <div><span class="orange-nav-ic-txt"> PG </span></div>
+                      </li>
+                      <li class="menu-item" id="dragoonsotfBarbtn">
+                        <div><span class="orange-nav-ic-txt"> DRAGOONSOFT </span></div>
+                      </li>
+                      <li class="menu-item" id="fastspinBarbtn">
+                        <div><span class="orange-nav-ic-txt"> FASTSPIN </span></div>
+                      </li>
+                      <li class="menu-item" id="fcBarbtn">
+                        <div><span class="orange-nav-ic-txt"> FC </span></div>
+                      </li>
+                      <li class="menu-item" id="jdbBarbtn">
+                        <div><span class="orange-nav-ic-txt"> JDB </span></div>
+                      </li>
+
+                      <li class="menu-item" id="ladyluckBarbtn">
+                        <div><span class="orange-nav-ic-txt"> LADYLUCK </span></div>
+                      </li>
+                      <li class="menu-item" id="play8Bartn">
+                        <div><span class="orange-nav-ic-txt"> PLAY8 </span></div>
+                      </li>
+                      <li class="menu-item" id="spadeBarbtn">
+                        <div><span class="orange-nav-ic-txt"> SPADE </span></div>
+                      </li>
+                    </ul>
+                  </div>
+                  <div class="main-con">
+                    <div class="row home isAndroid" id="allBar">
+                      <div class="col col-sm-4 col-md-2  col-lg-2 col-xl-2 pointer 11 ps-1">
+                        <div class="casinoicons">
+                          <a onclick="launchTableAE('SEXYBCRT','LIVE','MX-LIVE-001')">
+                            <img class="img-fluid" src="/assets/images/baccarat.png">
+                            <div class="casino-bottom"> Baccarat Classic </div>
+                          </a>
+                        </div>
+                      </div>
+                      <div class="col col-sm-4 col-md-2  col-lg-2 col-xl-2 pointer 11 ps-1">
+                        <div class="casinoicons">
+                          <a onclick="launchTableAE('SEXYBCRT','LIVE','MX-LIVE-006')">
+                            <img class="img-fluid" src="/assets/images/dt.png">
+                            <div class="casino-bottom"> Dragon Tiger </div>
+                          </a>
+                        </div>
+                      </div>
+                      <div class="col col-sm-4 col-md-2  col-lg-2 col-xl-2 pointer 11 ps-1">
+                        <div class="casinoicons">
+                          <a onclick="launchTableAE('SEXYBCRT','LIVE','MX-LIVE-009')">
+                            <img class="img-fluid" src="/assets/images/roulette.jpg">
+                            <div class="casino-bottom"> Roulette </div>
+                          </a>
+                        </div>
+                      </div>
+                      <div class="col col-sm-4 col-md-2  col-lg-2 col-xl-2 pointer 11 ps-1">
+                        <div class="casinoicons">
+                          <a onclick="launchTableAE('SEXYBCRT','LIVE','MX-LIVE-014')">
+                            <img class="img-fluid" src="/assets/images/thihi-lo.webp">
+                            <div class="casino-bottom"> Thai HiLo </div>
+                          </a>
+                        </div>
+                      </div>
+                      <div class="col col-sm-4 col-md-2  col-lg-2 col-xl-2 pointer 11 ps-1">
+                        <div class="casinoicons">
+                          <a onclick="launchTableAE('SEXYBCRT','LIVE','MX-LIVE-018')">
+                            <img class="img-fluid" src="/assets/images/pokdeng.webp">
+                            <div class="casino-bottom"> Pok Deng </div>
+                          </a>
+                        </div>
+                      </div>
+                      <!-- <div class="col col-sm-4 col-md-2  col-lg-2 col-xl-2 pointer 11 ps-1">
+                           <div class="casinoicons">
+                              <a onclick="launchTableAE('SEXYBCRT','LIVE','MX-LIVE-011')">
+                                 <img class="img-fluid" src="/assets/images/teenpatti.jpg">
+                                 <div class="casino-bottom"> 2020 Teen Patti </div>
+                              </a>
+                           </div>
+                        </div>
+                        <div class="col col-sm-4 col-md-2  col-lg-2 col-xl-2 pointer 11 ps-1">
+                           <div class="casinoicons">
+                              <a onclick="launchTableAE('SEXYBCRT','LIVE','MX-LIVE-012')">
+                                 <img class="img-fluid" src="/assets/images/xtraandarbahar.jpg">
+                                 <div class="casino-bottom"> Extra Andar Bahar </div>
+                              </a>
+                           </div>
+                        </div> -->
+                      <div class="col col-sm-4 col-md-2  col-lg-2 col-xl-2 pointer 11 ps-1">
+                        <div class="casinoicons">
+                          <a onclick="launchTableAE('SEXYBCRT','LIVE','MX-LIVE-015')">
+                            <img class="img-fluid" src="/assets/images/fishcrab.jpg">
+                            <div class="casino-bottom"> Thai Fish Prawn Crab </div>
+                          </a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="inplay-match mobile-content-games">
+            <div class="col-xs-12 col-lg-12" style="background:#193052;padding-left: 15px;border-top: 1px solid #fff;">
+              <h4
+                style="color:#fff;line-height:2.5;padding:0px;padding: 0px 0px;font-size:20px;margin: 5px; margin-bottom: 0;">
+                Indian casino</h4>
+            </div>
+            <div style="margin: 0;">
+              <div class="col-md-12 mobile-width" style="margin: 0;padding: 0;">
+                <div class="inplay-sportwise">
+                  <div class="position-relative mobile-games-content">
+                    <ul id="menuListId" class="menu-list">
+                      <li class="menu-item active" id="allBarbtn">
+                        <div><span class="orange-nav-ic-txt"> ALL </span></div>
+                      </li>
+                      <li class="menu-item" id="royalGameBarbtn">
+                        <div><span class="orange-nav-ic-txt"> ROYAL GAMING </span></div>
+                      </li>
+                      <li class="menu-item" id="casinoBarbtn">
+                        <div><span class="orange-nav-ic-txt"> DIAMOND CASINO </span></div>
+                      </li>
+                      <li class="menu-item" id="auraBarbtn">
+                        <div><span class="orange-nav-ic-txt"> AURA GAMING </span></div>
+                      </li>
+                      <li class="menu-item" id="sexyBarbtn">
+                        <div><span class="orange-nav-ic-txt"> SEXY </span></div>
+                      </li>
+                      <li class="menu-item" id="virtualBarbtn">
+                        <div><span class="orange-nav-ic-txt"> OUR VIRTUAL </span></div>
+                      </li>
+                      <li class="menu-item" id="tvbetBarbtn">
+                        <div><span class="orange-nav-ic-txt"> SPRIBE </span></div>
+                      </li>
+                      <li class="menu-item" id="jiliBarbtn">
+                        <div><span class="orange-nav-ic-txt"> JILI </span></div>
+                      </li>
+                      <li class="menu-item" id="kingmakerBarbtn">
+                        <div><span class="orange-nav-ic-txt"> KINGMAKER </span></div>
+                      </li>
+                      <li class="menu-item" id="ezugiBarbtn">
+                        <div><span class="orange-nav-ic-txt"> YELLOWBAT </span></div>
+                      </li>
+
+                      <li class="menu-item" id="betgameBarbtn">
+                        <div><span class="orange-nav-ic-txt"> YL </span></div>
+                      </li>
+                      <li class="menu-item" id="platingamesBarbtn">
+                        <div><span class="orange-nav-ic-txt"> PG </span></div>
+                      </li>
+                      <li class="menu-item" id="dragoonsotfBarbtn">
+                        <div><span class="orange-nav-ic-txt"> DRAGOONSOFT </span></div>
+                      </li>
+                      <li class="menu-item" id="fastspinBarbtn">
+                        <div><span class="orange-nav-ic-txt"> FASTSPIN </span></div>
+                      </li>
+                      <li class="menu-item" id="fcBarbtn">
+                        <div><span class="orange-nav-ic-txt"> FC </span></div>
+                      </li>
+                      <li class="menu-item" id="jdbBarbtn">
+                        <div><span class="orange-nav-ic-txt"> JDB </span></div>
+                      </li>
+
+                      <li class="menu-item" id="ladyluckBarbtn">
+                        <div><span class="orange-nav-ic-txt"> LADYLUCK </span></div>
+                      </li>
+                      <li class="menu-item" id="play8Bartn">
+                        <div><span class="orange-nav-ic-txt"> PLAY8 </span></div>
+                      </li>
+                      <li class="menu-item" id="spadeBarbtn">
+                        <div><span class="orange-nav-ic-txt"> SPADE </span></div>
+                      </li>
+                    </ul>
+                  </div>
+                  <div class="main-con">
+                    <div class="row home isAndroid" id="allBar">
+                      <div class="col col-xs-4 col-md-2 col-sm-2 col-xl-2 pointer 11 ps-1 col-desk-2">
+                        <div class="casinoicons">
+                          <a onclick="launchTableAE('ROYALGAMING','LIVE','RG-LIVE-003')">
+                            <img class="img-fluid" src="/assets/indiancasinpo/imgi_22_liveteenpatti.webp">
+                            <div class="casino-bottom"> Teen Patti </div>
+                          </a>
+                        </div>
+                      </div>
+                      <div class="col col-xs-4 col-md-2 col-sm-2 col-xl-2 pointer 11 ps-1 col-desk-2">
+                        <div class="casinoicons">
+                          <a onclick="launchTableAE('ROYALGAMING','LIVE','RG-LIVE-013')">
+                            <img class="img-fluid" src="/assets/indiancasinpo/imgi_23_andarbahar1.webp">
+                            <div class="casino-bottom"> One Day Teenpatti </div>
+                          </a>
+                        </div>
+                      </div>
+                      <div class="col col-xs-4 col-md-2 col-sm-2 col-xl-2 pointer 11 ps-1 col-desk-2">
+                        <div class="casinoicons">
+                          <a onclick="launchTableAE('ROYALGAMING','LIVE','RG-LIVE-016')">
+                            <img class="img-fluid" src="/assets/indiancasinpo/imgi_24_roullete.webp">
+                            <div class="casino-bottom"> 2 Cards Teenpatti </div>
+                          </a>
+                        </div>
+                      </div>
+
+                      <div class="col col-xs-4 col-md-2 col-sm-2 col-xl-2 pointer 11 ps-1 col-desk-2">
+                        <div class="casinoicons">
+                          <a onclick="launchTableAE('ROYALGAMING','LIVE','RG-LIVE-020')">
+                            <img class="img-fluid" src="/assets/indiancasinpo/imgi_28_teenpattit20.webp">
+                            <div class="casino-bottom"> 2 Card Teen Patti One Day </div>
+                          </a>
+                        </div>
+                      </div>
+                      <div class="col col-xs-4 col-md-2 col-sm-2 col-xl-2 pointer 11 ps-1 col-desk-2">
+                        <div class="casinoicons">
+                          <a onclick="launchTableAE('ROYALGAMING','LIVE','RG-LIVE-022')">
+                            <img class="img-fluid" src="/assets/indiancasinpo/imgi_29_aaa.webp">
+                            <div class="casino-bottom"> Test Teen Patti </div>
+                          </a>
+                        </div>
+                      </div>
+                      <div class="col col-xs-4 col-md-2 col-sm-2 col-xl-2 pointer 11 ps-1 col-desk-2">
+                        <div class="casinoicons">
+                          <a onclick="launchTableAE('ROYALGAMING','LIVE','RG-LIVE-033')">
+                            <img class="img-fluid" src="/assets/indiancasinpo/imgi_30_32casino.webp">
+                            <div class="casino-bottom"> VIP TeenPatti </div>
+                          </a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="inplay-match mobile-content-games">
+            <div class="col-xs-12 col-lg-12" style="background:#193052;padding-left: 15px;border-top: 1px solid #fff;">
+              <h4
+                style="color:#fff;line-height:2.5;padding:0px;padding: 0px 0px;font-size:20px;margin: 5px; margin-bottom: 0;">
+                Favourite Casino </h4>
+            </div>
+            <div style="margin: 0;">
+              <div class="col-md-12 mobile-width" style="margin: 0;padding: 0;">
+                <div class="nav-content-wrap fortextcolr animate__animated animate__faster 500ms animate__slideInLeft">
+                  <div class="nav-content-inner" style="transform: translate(0%, 0px);">
+                    <div class="content-box sportslider">
+                      <div class="layout-brand">
+                        <div class="card1">
+                          <ul>
+                            <li class="ng-star-inserted">
+                              <img class="ng-star-inserted" alt="JILI" src="/assets/providers/imgi_34_jilib.webp">
+                            </li>
+                            <li class="ng-star-inserted">
+                              <img class="ng-star-inserted" alt="JDB" src="/assets/providers/imgi_35_ezugib.jpg">
+                            </li>
+                            <li class="ng-star-inserted">
+                              <img class="ng-star-inserted" alt="REDTIGER"
+                                src="/assets/providers/imgi_36_superspadeb.webp">
+                            </li>
+                            <!-- <li class="ng-star-inserted">
+                              <img class="ng-star-inserted" alt="SPADEGAMING"
+                                src="/assets/providers/imgi_37_tablegamesb.webp">
+                            </li> -->
+                            <li class="ng-star-inserted">
+                              <img class="ng-star-inserted" alt="BETGAMES"
+                                src="/assets/providers/imgi_38_virtualb.webp">
+                            </li>
+                            <li class="ng-star-inserted">
+                              <img class="ng-star-inserted" alt="YESBINGO" src="/assets/providers/imgi_39_bingob.webp">
+                            </li>
+                            <li class="ng-star-inserted">
+                              <img class="ng-star-inserted" alt="EZUGI" src="/assets/providers/imgi_40_fishingb.webp">
+                            </li>
+                            <li class="ng-star-inserted">
+                              <img class="ng-star-inserted" alt="ROYALGAMING"
+                                src="/assets/providers/imgi_41_betgamesb.webp">
+                            </li>
+                            <!-- <li class="ng-star-inserted">
+                              <img class="ng-star-inserted" alt="PRAGMATICPLAY"
+                                src="/assets/providers/imgi_42_casinob.webp">
+                            </li> -->
+                            <li class="ng-star-inserted">
+                              <img class="ng-star-inserted" alt="SEXYBCRT" src="/assets/providers/imgi_43_liveb.webp">
+                            </li>
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Live Matches Section (from reference) -->
+    <!-- <div>
+        <div class="section-title">🔥 Live Action & Events</div>
+        <div class="match-grid">
+          <div class="match-card"><span class="badge-live">LIVE CRICKET</span>
+            <h3>RC Bengaluru v Kolkata Knight Riders</h3>
+            <p>Indian Premier League • 9:45 am</p><button class="bet-btn">BET NOW <i
+                class="fas fa-arrow-right"></i></button>
+          </div>
+          <div class="match-card"><span class="badge-live">LIVE CRICKET</span>
+            <h3>Hobart Hurricanes vs Perth Scorchers</h3>
+            <p>Big Bash League 2025-26 • 9:45 am</p><button class="bet-btn">BET NOW</button>
+          </div>
+          <div class="match-card"><span class="badge-live">FOOTBALL</span>
+            <h3>FC Barcelona SRL vs BSC Young Boys</h3>
+            <p>UCL SRL • 9:45 am</p><button class="bet-btn">BET NOW</button>
+          </div>
+          <div class="match-card"><span class="badge-live">TENNIS</span>
+            <h3>G Diallo v Trungelliti</h3>
+            <p>ATP Shanghai 2025-26 • 9:45 am</p><button class="bet-btn">BET NOW</button>
+          </div>
+        </div>
+      </div> -->
+
+    <!-- Quick Stats Rework -->
+    <div class="quick-stats">
+      <div class="quick-list"><i class="fas fa-users"></i> <strong>Trusted by 1M+</strong> Indian bettors</div>
+      <div class="quick-list"><i class="fas fa-trophy"></i> <strong>24/7</strong> Live betting markets</div>
+      <div class="quick-list"><i class="fas fa-shield-alt"></i> <strong>SSL Secure</strong> transactions</div>
+      <div class="quick-list"><i class="fas fa-google-play"></i> <strong>Mobile App</strong> rated 4.8★</div>
+    </div>
+
+    <!-- About DELHI BOOK -->
+    <div id="about">
+      <div class="section-title">About DELHI BOOK</div>
+      <p style="margin-bottom: 20px;">DELHI BOOK is a trusted name in India’s online betting scene, known for providing
+        verified, secure, and user-friendly betting IDs. The platform offers a variety of games including sports
+        betting, live casino, slots, poker, and more. Designed with transparency and fair play at its core, DELHI BOOK
+        ensures an engaging experience for both new and seasoned players. With real-time updates, smooth
+        transactions,
+        and responsive support, we stand out as the ultimate destination for Indian bettors.</p>
+    </div>
+
+    <!-- Premium Features Table -->
+    <div class="section-title">⭐ Premium Features</div>
+    <div class="table-wrap">
+      <table>
+        <tr>
+          <th>Platform</th>
+          <td>DELHI BOOK</td>
+        </tr>
+        <tr>
+          <th>Specialization</th>
+          <td>Online Cricket Betting, Casino Games</td>
+        </tr>
+        <tr>
+          <th>Security</th>
+          <td>Advanced Encryption, 100% Secure Transactions</td>
+        </tr>
+        <tr>
+          <th>Customer Support</th>
+          <td>24/7 Multilingual Support</td>
+        </tr>
+        <tr>
+          <th>Mobile Compatibility</th>
+          <td>Fully Optimized Website & Mobile App</td>
+        </tr>
+        <tr>
+          <th>Payment Methods</th>
+          <td>UPI, Credit/Debit Cards, E-Wallets, Bank Transfers</td>
+        </tr>
+      </table>
+    </div>
+
+    <!-- What is DELHI BOOK ID? -->
+    <div id="betid">
+      <div class="section-title">🔑 What Is DELHI BOOK ID?</div>
+      <p>A DELHI BOOK ID acts as your digital key to access all betting and gaming features on the platform. Through
+        your
+        ID, you can place bets, deposit funds, withdraw winnings, and explore exclusive bonus offers. Verified IDs
+        ensure you play on a secure and legal platform with complete data protection.</p>
+    </div>
+
+    <!-- Why Choose DELHI BOOK Grid -->
+    <div class="section-title">🏆 Why DELHI BOOK Is the Best Choice</div>
+    <div class="feature-grid">
+      <div class="feature-card"><i class="fas fa-dice-d6 icon-lg"></i>
+        <h3>Fair & Responsible Gaming</h3>
+        <p>Strict policies and responsible tools for safe betting.</p>
+      </div>
+      <div class="feature-card"><i class="fas fa-rupee-sign icon-lg"></i>
+        <h3>Quick Deposit & Withdrawals</h3>
+        <p>Instant UPI, bank transfers, no delays.</p>
+      </div>
+      <div class="feature-card"><i class="fas fa-chart-line icon-lg"></i>
+        <h3>Competitive Odds</h3>
+        <p>Best odds across all sports and cricket leagues.</p>
+      </div>
+      <div class="feature-card"><i class="fas fa-headset icon-lg"></i>
+        <h3>24/7 Expert Support</h3>
+        <p>Live chat, email, and phone assistance.</p>
+      </div>
+    </div>
+
+    <!-- How to Get Your DELHI BOOK ID (Target section for floating button) -->
+    <div id="get-id-section">
+      <div class="section-title">📝 Get Your DELHI BOOK ID (3 Simple Steps)</div>
+      <div class="feature-grid">
+        <div class="feature-card"><span style="font-size:2rem;">1️⃣</span>
+          <h3>Visit official registration</h3>
+          <p>Fill basic details & contact number.</p>
+        </div>
+        <div class="feature-card"><span style="font-size:2rem;">2️⃣</span>
+          <h3>Click on Whatsapp Icon</h3>
+          <p>Message GET DELHI BOOK ID.</p>
+        </div>
+        <div class="feature-card"><span style="font-size:2rem;">3️⃣</span>
+          <h3>Receive DELHI BOOK ID</h3>
+          <p>Start betting across cricket, casino & sports.</p>
+        </div>
+      </div>
+      <div style="text-align: center; margin: 20px 0 30px;">
+        <button class="btn-primary" id="getNowBtn" (click)="getLinksurl()"><i class="fas fa-id-card"></i> Get Your DELHI BOOK ID Now</button>
+      </div>
+    </div>
+
+    <!-- Top Betting Platforms Accessible via DELHI BOOK -->
+    <div id="platforms">
+      <div class="section-title">🚀 Top Betting Platforms You Can Access with DELHI BOOK</div>
+      <div class="platform-grid">
+        <div class="feature-card"><i class="fab fa-critical-role icon-lg"></i>
+          <h3>Cricbuzz ID</h3>
+          <p>Live cricket data + real-time odds. Bet on IPL, T20s with expert insights.</p>
+        </div>
+        <div class="feature-card"><i class="fas fa-futbol icon-lg"></i>
+          <h3>11xPlay ID</h3>
+          <p>Premium multi-sport betting, exclusive bonuses and high-speed interface.</p>
+        </div>
+        <div class="feature-card"><i class="fas fa-leaf icon-lg"></i>
+          <h3>Lotus365 ID</h3>
+          <p>Fully secure betting, live casino tables & competitive odds.</p>
+        </div>
+        <div class="feature-card"><i class="fas fa-gem icon-lg"></i>
+          <h3>Gold365 ID</h3>
+          <p>Premium gaming, daily cashback, live dealer games & rewards.</p>
+        </div>
+        <div class="feature-card"><i class="fas fa-bolt icon-lg"></i>
+          <h3>Laser247 ID</h3>
+          <p>Instant activation, flexible betting & attractive bonuses.</p>
+        </div>
+        <div class="feature-card"><i class="fas fa-cricket icon-lg"></i>
+          <h3>Online Cricket ID</h3>
+          <p>Global tournaments: IPL, BBL, PSL, World Cup & more.</p>
+        </div>
+      </div>
+      <p style="margin-top: 12px;"><i class="fas fa-check-circle" style="color:#ffb347;"></i> <strong>All-in-One
+          Online Betting ID</strong> – cricket, football, tennis, kabaddi, live casino, slots under one secure
+        account.</p>
+    </div>
+
+    <!-- Account access & login instructions -->
+    <div class="section-title">🔐 DELHI BOOK Account Access</div>
+    <div class="feature-grid">
+      <div class="feature-card"><i class="fas fa-user-plus"></i>
+        <h3>Register on DELHI BOOK</h3>
+        <p>Visit on DELHI BOOK → Click on Whatsapp → Message → name, mobile, email → verify → get unique ID & Password.
+        </p>
+      </div>
+      <div class="feature-card"><i class="fas fa-sign-in-alt"></i>
+        <h3>Login to DELHI BOOK</h3>
+        <p>Use your ID and password on web/app. Forgot password? Reset via Support Team.</p>
+      </div>
+    </div>
+
+    <!-- Betting Categories -->
+    <div class="section-title">📊 Betting Categories</div>
+    <div class="match-grid" style="margin-bottom:30px;">
+      <div class="match-card">⚡ Pre-Match Bets</div>
+      <div class="match-card">🎯 Live/In-Play Bets</div>
+      <div class="match-card">🏆 Outright Bets</div>
+      <div class="match-card">🎰 Casino & Slots Bets</div>
+    </div>
+
+    <!-- Casino Games & Sports -->
+    <!-- <div class="section-title">🎲 Casino Games & Sports to Bet On</div>
+      <div style="display: flex; flex-wrap: wrap; gap: 20px; justify-content: space-between;">
+        <div style="flex:1; min-width:180px;"><i class="fas fa-spade"></i> Teen Patti • Andar Bahar • Roulette •
+          Blackjack • Slots • Baccarat</div>
+        <div style="flex:1; min-width:180px;"><i class="fas fa-futbol"></i> Cricket • Football • Tennis • Basketball •
+          Kabaddi • Horse Racing</div>
+      </div> -->
+
+    <!-- Promotions and Bonuses Section -->
+    <div class="section-title">🎁 Promotions & Bonuses</div>
+    <div class="feature-grid">
+      <div class="feature-card"><i class="fas fa-gift"></i>
+        <h3>Welcome Bonus</h3>
+        <p>100% first deposit match up to ₹10,000.</p>
+      </div>
+      <div class="feature-card"><i class="fas fa-chart-simple"></i>
+        <h3>Loyalty Points</h3>
+        <p>Earn points on every bet, redeem for cashback.</p>
+      </div>
+      <div class="feature-card"><i class="fas fa-percent"></i>
+        <h3>Weekly Cashback</h3>
+        <p>Up to 10% cashback on net losses.</p>
+      </div>
+      <div class="feature-card"><i class="fas fa-crown"></i>
+        <h3>DELHI BOOK Club</h3>
+        <p>Exclusive tournaments, VIP rewards & priority support.</p>
+      </div>
+      <div class="feature-card"><i class="fas fa-diwali"></i>
+        <h3>Festive Dhamaka</h3>
+        <p>Diwali, New Year, IPL special bonuses.</p>
+      </div>
+    </div>
+
+    <!-- DELHI BOOK App Download -->
+    <div id="app" class="app-banner">
+      <div><i class="fas fa-mobile-alt" style="font-size: 3.5rem; color:#ffb347;"></i>
+        <h2 style="margin-top: 10px;">DELHI BOOK App</h2>
+        <p>India’s highest-rated gaming experience ★4.8</p>
+        <p>1 Million+ downloads | Claim ₹250 Free Bonus on App</p><button class="btn-primary" (click)="getDownloadurl()"><i
+            class="fab fa-android"></i> Android APK</button>
+        <!-- <button class="btn-outline"><i class="fab fa-apple"></i>
+            iOS (soon)</button> -->
+      </div>
+      <!-- <div>
+          <img
+            src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 200'%3E%3Crect width='200' height='200' fill='%231f3a4f'/%3E%3Ctext x='30' y='110' fill='%23ffb347' font-size='22'%3E⚡DELHI BOOK⚡%3C/text%3E%3C/svg%3E"
+            style="width: 120px; border-radius: 24px;" alt="app preview"></div> -->
+    </div>
+
+    <!-- Trusted by users -->
+    <div class="section-title">💬 Trusted by 10 Lakh+ Users</div>
+    <div class="match-grid">
+      <div class="match-card"><i class="fas fa-star rating-star"></i><i class="fas fa-star rating-star"></i><i
+          class="fas fa-star rating-star"></i><i class="fas fa-star rating-star"></i><i
+          class="fas fa-star rating-star"></i>
+        <p>"Fastest withdrawals, best odds. DELHI BOOK ID makes betting seamless!" – Rohan S.</p>
+      </div>
+      <div class="match-card"><i class="fas fa-star rating-star"></i><i class="fas fa-star rating-star"></i><i
+          class="fas fa-star rating-star"></i><i class="fas fa-star rating-star"></i><i
+          class="fas fa-star rating-star"></i>
+        <p>"Cricket betting at its peak. Instant support and great promotions." – Anjali M.</p>
+      </div>
+      <div class="match-card"><i class="fas fa-star rating-star"></i><i class="fas fa-star rating-star"></i><i
+          class="fas fa-star rating-star"></i><i class="fas fa-star rating-star"></i><i
+          class="fas fa-star-half-alt rating-star"></i>
+        <p>"Casino games are superb and the DELHI BOOK app is super smooth!" – Vikram D.</p>
+      </div>
+    </div>
+
+    <!-- Withdrawal info -->
+    <div class="section-title">💸 How to Withdraw Cash from DELHI BOOK</div>
+    <ul style="margin-left: 28px; background: #0e1b2b; padding: 20px 30px; border-radius: 28px;">
+      <li>✅ Submit withdrawal request via Support</li>
+      <li>✅ Ensure all bets are settled</li>
+      <li>✅ Approval within 1–2 hours</li>
+      <li>✅ Amount credited directly to bank/UPI</li>
+    </ul>
+
+    <!-- FAQ Accordion style (minimal) -->
+    <div class="section-title">❓ Frequently Asked Questions</div>
+    <div class="feature-grid" style="grid-template-columns:1fr 1fr;">
+      <div class="feature-card"><strong>How to register for DELHI BOOK ID?</strong><br>👉 Fill registration form on
+        Whatsapp, get ID instantly.</div>
+      <div class="feature-card"><strong>Is DELHI BOOK legal in India?</strong><br>Licensed and follows responsible
+        gaming
+        guidelines.</div>
+      <div class="feature-card"><strong>What sports can I bet on?</strong><br>Cricket, football, tennis, basketball,
+        horse racing & more.</div>
+      <div class="feature-card"><strong>How long do withdrawals take?</strong><br>Most within 1–2 hours after
+        verification.</div>
+      <div class="feature-card"><strong>Does DELHI BOOK have an app?</strong><br>Yes, Android app available with 4.8
+        rating.</div>
+      <div class="feature-card"><strong>Is my data secure?</strong><br>Advanced SSL encryption, 100% secure.</div>
+    </div>
+
+    <!-- Customer Support -->
+    <div id="contact" style="background: #0a1624; border-radius: 40px; padding: 30px; margin: 40px 0;">
+      <i class="fas fa-headset" style="font-size: 2rem;"></i>
+      <h3>24/7 Customer Support</h3>
+      <p>Live Chat • Email: support@delhibook.com • Call: +91-xxxxxxxxxx</p>
+      <p>We’re here to help you anytime — fast & reliable assistance.</p>
+    </div>
+  </div>
+</main>
+
+<footer>
+  <div class="container">
+    <div style="display: flex; justify-content: space-between; flex-wrap: wrap; gap: 30px;">
+      <div>
+        <h3 style="color:#ffb347;">DELHI BOOK</h3>
+        <p>India’s Most Reliable Betting ID Platform</p>
+        <p class="icon-size"><i class="fab fa-instagram"></i>
+          <i class="fab fa-telegram"></i>
+          <i class="fab fa-whatsapp"></i>
+        </p>
+      </div>
+      <div>
+        <h4>Quick Links</h4>
+        <p>About Us</p>
+        <p>Betting ID</p>
+        <p>Privacy Policy</p>
+        <p>Fairplay</p>
+      </div>
+      <div>
+        <h4>Legal & Compliance</h4>
+        <p>18+ only | Responsible gaming</p>
+        <p>Licensed under Curacao</p>
+      </div>
+    </div>
+    <hr style="border-color:#1e2f41; margin: 30px 0 20px;">
+    <p style="text-align: center;">© 2026 DELHI BOOK — The ultimate destination for online betting & casino. Play
+      responsibly.</p>
+  </div>
+</footer>
+
+<!-- Floating WhatsApp & GET ID Buttons -->
+<div class="float-buttons">
+  <a (click)="getWhtspurl()"
+    target="_blank" rel="noopener noreferrer" class="float-btn float-wa" data-tooltip="WhatsApp Support">
+    <i class="fab fa-whatsapp"></i>
+  </a>
+  <button (click)="getLinksurl()" class="float-btn float-id" id="floatingGetIdBtn" data-tooltip="Get DELHI BOOK ID">
+    <i class="fas fa-id-card"></i>
+  </button>
+</div>
+
+<!-- <script>
+    const menuToggle = document.getElementById('menuToggle');
+    const navLinks = document.getElementById('navLinks');
+    if (menuToggle) {
+      menuToggle.addEventListener('click', () => {
+        navLinks.classList.toggle('show');
+      });
+    }
+
+    const scrollToGetId = () => {
+      const targetSection = document.getElementById('get-id-section');
+      if (targetSection) {
+        targetSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      } else {
+        window.scrollTo({ top: document.body.scrollHeight * 0.4, behavior: 'smooth' });
+      }
+    };
+
+    const heroGetId = document.getElementById('heroGetIdBtn');
+    const getNowBtn = document.getElementById('getNowBtn');
+    const floatingBtn = document.getElementById('floatingGetIdBtn');
+
+    if (heroGetId) heroGetId.addEventListener('click', scrollToGetId);
+    if (getNowBtn) getNowBtn.addEventListener('click', scrollToGetId);
+    if (floatingBtn) floatingBtn.addEventListener('click', scrollToGetId);
+    const navGetId = document.querySelector('.nav-links a.btn-primary');
+    if (navGetId) navGetId.addEventListener('click', (e) => {
+      e.preventDefault();
+      scrollToGetId();
+    });
+  </script> -->

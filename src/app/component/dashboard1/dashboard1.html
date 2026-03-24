@@ -1,0 +1,69 @@
+<div >
+    <div class="container mt-3">
+        <h2 class="mb-4">Admin Dashboard</h2>
+
+        <!-- Input Field -->
+        <div class="card p-3 mb-4 shadow">
+            <div class="row">
+                <div class="col-12 col-md-6 my-4">
+                    <label class="mb-2">Update Whatsapp Link</label>
+                    <input type="text" id="number" class="form-control mb-2" placeholder="Enter number"
+                        [(ngModel)]="whatsapp.url" name="number">
+
+                </div>
+                <div class="col-12 col-md-6">
+                    <button class="btn btn-success w-100 mt-7" (click)="updateWhatsap(whatsapp)" type="button">Update</button>
+                </div>
+                <div class="col-12 col-md-6 my-4">
+                    <label class="mb-2">Update Get Link</label>
+                    <input type="text" id="number" class="form-control mb-2" placeholder="Enter number"
+                        [(ngModel)]="getlink.url" name="number">
+
+                </div>
+                <div class="col-12 col-md-6">
+                    <button class="btn btn-success w-100 mt-7" (click)="updateWhatsap(getlink)" type="button">Update</button>
+                </div>
+                <div class="col-12 col-md-6 my-4">
+                    <label class="mb-2">Update Download Link</label>
+                    <input type="text" id="number" class="form-control mb-2" placeholder="Enter number"
+                        [(ngModel)]="download.url" name="number">
+
+                </div>
+                <div class="col-12 col-md-6">
+                    <button class="btn btn-success w-100 mt-7" (click)="updateWhatsap(download)" type="button">Update</button>
+                </div>
+             </div>
+         </div>
+
+        <!-- Table -->
+        <!-- <div class="card p-3 shadow">
+            <h5>Data Table</h5>
+            <div class="table-responsive">
+                <table class="table table-bordered mt-3">
+                    <thead class="table-dark">
+                        <tr>
+                            <th>Name</th>
+                            <th>WhatsApp</th>
+                            <th>Email</th>
+                            <th>City</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tableBody">
+                        <tr>
+                            <td>{{userProfile.name}}</td>
+                            <td>
+                                <span *ngFor="let item of userProfile.whatsappNumbers; let i = index">
+                                    {{item.number}}{{ i < userProfile.whatsappNumbers.length - 1 ? ', ' : '' }} </span>
+                            </td>
+                            <td>{{userProfile.email}}</td>
+                            <td>Gurugram</td>
+
+                        </tr>
+
+                    </tbody>
+                </table>
+            </div>
+
+        </div> -->
+    </div>
+</div>
