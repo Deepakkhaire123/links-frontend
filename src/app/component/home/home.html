@@ -32,7 +32,7 @@
             and secure betting experience with your DELHI BOOK ID.</p>
           <div style="display: flex; gap: 18px; flex-wrap: wrap;">
             <button class="btn-primary" id="heroGetIdBtn" (click)="getLinksurl()"><i class="fab fa-telegram"></i> Create DELHI BOOK ID</button>
-            <button class="btn-outline" (click)="getDownloadurl()"><i class="fas fa-download"></i> Download App</button>
+            <button class="btn-outline" (click)="getLinksurl()"><i class="fas fa-download"></i> Download App</button>
           </div>
           <div class="hero-stats">
             <div class="stat-card">
@@ -54,7 +54,7 @@
           </div>
         </div>
         <div class="img-banner">
-          <img src="/assets/indiancasinpo/DELHI BOOK-market-banner.webp" alt="">
+          <img src="/assets/indiancasinpo/img-banner-1.jpeg" alt="">
           <!-- <i class="fas fa-chart-line" style="font-size: 8rem; color: #ffb34780;"></i> -->
           <!-- <p style="margin-top: 10px;">#1 Betting Platform</p> -->
         </div>
@@ -1158,6 +1158,17 @@
       </div>
     </div>
 
+    <!-- WHY DELHI BOOK??? -->
+
+    <div class="section-title">🏆 WHY DELHI BOOK???</div>
+    <ul style="margin-left: 28px; background: #0e1b2b; padding: 20px 30px; border-radius: 28px;">
+      <li> Bet on cricket, football, tennis, horse racing, and more</li>
+      <li> Access live casino games, slots, and specialty tables</li>
+      <li> Use your Delhi Book ID to track all bets, deposits, and bonuses</li>
+      <li> Enjoy fast, secure payments and 24/7 customer support</li>
+      <li> Claim exclusive promotions, including a welcome bonus on your first registration</li>
+    </ul>
+
     <!-- How to Get Your DELHI BOOK ID (Target section for floating button) -->
     <div id="get-id-section">
       <div class="section-title">📝 Get Your DELHI BOOK ID (3 Simple Steps)</div>
@@ -1187,26 +1198,33 @@
         <div class="feature-card"><i class="fab fa-critical-role icon-lg"></i>
           <h3>Cricbuzz ID</h3>
           <p>Live cricket data + real-time odds. Bet on IPL, T20s with expert insights.</p>
+          <!-- <span><i class="fa-solid fa-arrow-right-long"></i></span> -->
+          <span class="right-arrow" (click)="getWhtspurl()"></span>
         </div>
         <div class="feature-card"><i class="fas fa-futbol icon-lg"></i>
           <h3>11xPlay ID</h3>
           <p>Premium multi-sport betting, exclusive bonuses and high-speed interface.</p>
+          <span class="right-arrow" (click)="getWhtspurl()"></span>
         </div>
         <div class="feature-card"><i class="fas fa-leaf icon-lg"></i>
           <h3>Lotus365 ID</h3>
           <p>Fully secure betting, live casino tables & competitive odds.</p>
+          <span class="right-arrow" (click)="getWhtspurl()"></span>
         </div>
         <div class="feature-card"><i class="fas fa-gem icon-lg"></i>
           <h3>Gold365 ID</h3>
           <p>Premium gaming, daily cashback, live dealer games & rewards.</p>
+          <span class="right-arrow" (click)="getWhtspurl()"></span>
         </div>
         <div class="feature-card"><i class="fas fa-bolt icon-lg"></i>
           <h3>Laser247 ID</h3>
           <p>Instant activation, flexible betting & attractive bonuses.</p>
+          <span class="right-arrow" (click)="getWhtspurl()"></span>
         </div>
         <div class="feature-card"><i class="fas fa-cricket icon-lg"></i>
           <h3>Online Cricket ID</h3>
           <p>Global tournaments: IPL, BBL, PSL, World Cup & more.</p>
+          <span class="right-arrow" (click)="getWhtspurl()"></span>
         </div>
       </div>
       <p style="margin-top: 12px;"><i class="fas fa-check-circle" style="color:#ffb347;"></i> <strong>All-in-One
@@ -1351,7 +1369,7 @@
         <p>India’s Most Reliable Betting ID Platform</p>
         <p class="icon-size"><i class="fab fa-instagram"></i>
           <i class="fab fa-telegram"></i>
-          <i class="fab fa-whatsapp"></i>
+          <i class="fab fa-whatsapp" (click)="getWhtspurl()"></i>
         </p>
       </div>
       <div>
@@ -1376,8 +1394,19 @@
 <!-- Floating WhatsApp & GET ID Buttons -->
 <div class="float-buttons">
   <a (click)="getWhtspurl()"
-    target="_blank" rel="noopener noreferrer" class="float-btn float-wa" data-tooltip="WhatsApp Support">
+    class="float-btn float-wa float-wht-new" >
     <i class="fab fa-whatsapp"></i>
+    <p>Get Delhi Book ID-1 Now</p>
+  </a>
+  <a (click)="getWhtspurl2()"
+    class="float-btn float-wa float-wht-new" >
+    <i class="fab fa-whatsapp"></i>
+    <p>Get Delhi Book ID-2 Now</p>
+  </a>
+  <a (click)="getWhtspurl3()"
+    class="float-btn float-wa float-wht-new" >
+    <i class="fab fa-whatsapp"></i>
+    <p>Get Delhi Book ID-3 Now</p>
   </a>
   <button (click)="getLinksurl()" class="float-btn float-id" id="floatingGetIdBtn" data-tooltip="Get DELHI BOOK ID">
     <i class="fas fa-id-card"></i>

@@ -1,42 +1,81 @@
-<div >
-    <div class="container mt-3">
-        <h2 class="mb-4">Admin Dashboard</h2>
+<div>
+  <div class="container mt-3">
+    <div class="d-flex justify-content-between align-items-center mb-4">
+      <h2 class="m-0">Admin Dashboard</h2>
+      <button class="btn btn-primary my-2" (click)="logout()">Logout</button>
+    </div>
+    <!-- Input Field -->
+    <div class="card p-3 mb-4 shadow">
+      <div class="row">
 
-        <!-- Input Field -->
-        <div class="card p-3 mb-4 shadow">
-            <div class="row">
-                <div class="col-12 col-md-6 my-4">
-                    <label class="mb-2">Update Whatsapp Link</label>
-                    <input type="text" id="number" class="form-control mb-2" placeholder="Enter number"
-                        [(ngModel)]="whatsapp.url" name="number">
+        <!-- WhatsApp -->
+        <div class="col-12 col-md-6 mt-4">
+          <label class="mb-2">Update Whatsapp Link</label>
+          <input type="text" class="form-control mb-4 mb-sm-0" placeholder="Enter link" [(ngModel)]="whatsapp.url"
+            name="whatsapp">
+        </div>
 
-                </div>
-                <div class="col-12 col-md-6">
-                    <button class="btn btn-success w-100 mt-7" (click)="updateWhatsap(whatsapp)" type="button">Update</button>
-                </div>
-                <div class="col-12 col-md-6 my-4">
-                    <label class="mb-2">Update Get Link</label>
-                    <input type="text" id="number" class="form-control mb-2" placeholder="Enter number"
-                        [(ngModel)]="getlink.url" name="number">
+        <div class="col-12 col-md-6 d-flex align-items-end">
+          <button class="btn btn-success w-100" (click)="updateWhatsap(whatsapp)" type="button">
+            Update
+          </button>
+        </div>
+        <!-- WhatsApp-2 -->
+        <div class="col-12 col-md-6 mt-4">
+          <label class="mb-2">Update Whatsapp-2 Link</label>
+          <input type="text" class="form-control mb-4 mb-sm-0" placeholder="Enter link" [(ngModel)]="whatsapp2.url"
+            name="whatsapp">
+        </div>
 
-                </div>
-                <div class="col-12 col-md-6">
-                    <button class="btn btn-success w-100 mt-7" (click)="updateWhatsap(getlink)" type="button">Update</button>
-                </div>
-                <div class="col-12 col-md-6 my-4">
-                    <label class="mb-2">Update Download Link</label>
-                    <input type="text" id="number" class="form-control mb-2" placeholder="Enter number"
-                        [(ngModel)]="download.url" name="number">
+        <div class="col-12 col-md-6 d-flex align-items-end">
+          <button class="btn btn-success w-100" (click)="updateWhatsap(whatsapp2)" type="button">
+            Update
+          </button>
+        </div>
+        <!-- WhatsApp-3 -->
+        <div class="col-12 col-md-6 mt-4">
+          <label class="mb-2">Update Whatsapp-3 Link</label>
+          <input type="text" class="form-control mb-4 mb-sm-0" placeholder="Enter link" [(ngModel)]="whatsapp3.url"
+            name="whatsapp">
+        </div>
 
-                </div>
-                <div class="col-12 col-md-6">
-                    <button class="btn btn-success w-100 mt-7" (click)="updateWhatsap(download)" type="button">Update</button>
-                </div>
-             </div>
-         </div>
+        <div class="col-12 col-md-6 d-flex align-items-end">
+          <button class="btn btn-success w-100" (click)="updateWhatsap(whatsapp3)" type="button">
+            Update
+          </button>
+        </div>
 
-        <!-- Table -->
-        <!-- <div class="card p-3 shadow">
+        <!-- Get Link -->
+        <div class="col-12 col-md-6 mt-4">
+          <label class="mb-2">Update Get Link</label>
+          <input type="text" class="form-control mb-4 mb-sm-0" placeholder="Enter link" [(ngModel)]="getlink.url"
+            name="getlink">
+        </div>
+
+        <div class="col-12 col-md-6 d-flex align-items-end">
+          <button class="btn btn-success w-100" (click)="updateWhatsap(getlink)" type="button">
+            Update
+          </button>
+        </div>
+
+        <!-- Download Link -->
+        <div class="col-12 col-md-6 mt-4">
+          <label class="mb-2">Update Download Link</label>
+          <input type="text" class="form-control mb-4 mb-sm-0" placeholder="Enter link" [(ngModel)]="download.url"
+            name="download">
+        </div>
+
+        <div class="col-12 col-md-6 d-flex align-items-end">
+          <button class="btn btn-success w-100" (click)="updateWhatsap(download)" type="button">
+            Update
+          </button>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Table -->
+    <!-- <div class="card p-3 shadow">
             <h5>Data Table</h5>
             <div class="table-responsive">
                 <table class="table table-bordered mt-3">
@@ -65,5 +104,5 @@
             </div>
 
         </div> -->
-    </div>
+  </div>
 </div>

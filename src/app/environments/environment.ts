@@ -1,5 +1,6 @@
 export const environment = {
   production: false,
-  // apiUrl: 'http://localhost:8080/api/v1/'
-  apiUrl: 'http://localhost:5000/api/'
+  apiUrl: 'https://admin.delhibook.live/api/'
+  // apiUrl: 'http://172.105.56.131:5000/api/'
+  // apiUrl: 'http://localhost:5000/api/'
 };

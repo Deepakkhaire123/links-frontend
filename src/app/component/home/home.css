@@ -257,6 +257,7 @@ header {
   border-radius: 28px;
   padding: 24px;
   border-bottom: 3px solid #ffb347;
+  position: relative;
 }
 
 .icon-lg {
@@ -318,6 +319,7 @@ footer {
   flex-direction: column;
   gap: 18px;
   z-index: 999;
+  align-items: flex-end;
 }
 
 .float-btn {
@@ -342,15 +344,15 @@ footer {
   transition: transform 0.2s;
 }
 
-.float-btn:hover {
+/* .float-btn:hover {
   transform: scale(1.08);
   background: #ffc46b;
   box-shadow: 0 12px 24px rgba(0, 0, 0, 0.4);
-}
+} */
 
-.float-btn:hover i {
+/* .float-btn:hover i {
   transform: scale(1.05);
-}
+} */
 
 /* WhatsApp specific */
 .float-wa {
@@ -371,7 +373,7 @@ footer {
 }
 
 /* tooltip effect on hover */
-.float-btn::after {
+/* .float-btn::after {
   content: attr(data-tooltip);
   position: absolute;
   right: 70px;
@@ -392,7 +394,7 @@ footer {
 
 .float-btn:hover::after {
   opacity: 1;
-}
+} */
 
 @media (max-width: 640px) {
   .float-buttons {
@@ -407,11 +409,11 @@ footer {
     font-size: 24px;
   }
 
-  .float-btn::after {
+  /* .float-btn::after {
     right: 60px;
     font-size: 0.7rem;
     white-space: nowrap;
-  }
+  } */
 }
 
 /* responsive menu */
@@ -1153,6 +1155,40 @@ a {
   font-size: 2.466667vw;
   text-align: center;
   font-weight: 550;
+}
+
+.right-arrow {
+  display: inline-block;
+  width: 40px;
+  height: 20px;
+  background-color: #ffb347;
+  cursor: pointer;
+  -webkit-mask-image: url('/assets/indiancasinpo/images-removebg-preview.png');
+  mask-image: url('/assets/indiancasinpo/images-removebg-preview.png');
+
+  -webkit-mask-size: contain;
+  mask-size: contain;
+
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+
+  -webkit-mask-position: center;
+  mask-position: center;
+  position: absolute;
+  bottom: 18px;
+  right: 20px;
+}
+
+.float-wht-new {
+  border-radius: 20px;
+  width: auto;
+  height: auto;
+  padding: 8px 12px;
+  gap: 8px;
+}
+.float-wht-new p{
+  font-size: 14px;
+  margin: 0;
 }
 
 @media (min-width:768px) {

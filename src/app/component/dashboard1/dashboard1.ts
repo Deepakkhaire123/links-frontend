@@ -3,6 +3,7 @@ import { Datahandlers } from '../../services/datahandlers';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import Swal from 'sweetalert2';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-dashboard1',
@@ -15,6 +16,14 @@ export class Dashboard1 {
     type: "whatsapp",
     "url": ""
   }
+  whatsapp2 = {
+    type: "whatsapp2",
+    "url": ""
+  }
+  whatsapp3 = {
+    type: "whatsapp3",
+    "url": ""
+  }
   getlink = {
     type: "getLink",
     "url": ""
@@ -25,29 +34,30 @@ export class Dashboard1 {
   }
   userData: any;
   userProfile: any;
-  ngOnInit(): void {
+  constructor(private dataSav: Datahandlers, private router: Router) { }
+  ngOnInit() {
     // this.userDetails();
+    this.getOldData();
   }
-  constructor(private dataSav: Datahandlers) { }
 
+  getOldData() {
+    this.dataSav.getAlllinks().subscribe((res: any) => {
+      this.whatsapp.url = res?.data?.whatsapp_url;
+      this.whatsapp2.url = res?.data?.whatsapp2_url;
+      this.whatsapp3.url = res?.data?.whatsapp3_url;
+      this.getlink.url = res?.data?.getLink_url;
+      this.download.url = res?.data?.download_url
+    });
+  }
   updateWhatsap(data: any) {
-
-    // if (!this.whatsapp.url || !this.getlink.url || !this.download.url) {
-    //   console.log("Enter number first");
-    //   return;
-    // }
     this.dataSav.updateLink(data).subscribe((res: any) => {
-      console.log(res);
-      // this.userData = res.data;
       Swal.fire({
         title: 'Success!',
         text: res?.message,
         icon: 'success',
         confirmButtonText: 'OK'
       });
-      // console.log(res);
-    }, (error: any) => {
-      // console.error("number not added");
+    }, () => {
       Swal.fire({
         icon: "error",
         title: "Oops...",
@@ -64,4 +74,31 @@ export class Dashboard1 {
   //     console.error("there is no data");
   //   })
   // }
+logout() {
+  Swal.fire({
+    title: 'Are you sure?',
+    text: 'You will be logged out!',
+    icon: 'warning',
+    showCancelButton: true,
+    confirmButtonColor: '#3085d6',
+    cancelButtonColor: '#d33',
+    confirmButtonText: 'Yes, logout',
+    cancelButtonText: 'Cancel'
+  }).then((result) => {
+    if (result.isConfirmed) {
+      localStorage.clear();
+      Swal.fire({
+        title: 'Logged out!',
+        text: 'You have been logged out successfully.',
+        icon: 'success',
+        timer: 1500,
+        showConfirmButton: false
+      });
+
+      setTimeout(() => {
+        this.router.navigate(['/login']);
+      }, 1500);
+    }
+  });
+}
 }
